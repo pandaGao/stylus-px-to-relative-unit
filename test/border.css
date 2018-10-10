@@ -1,0 +1,18 @@
+.test {
+  border: 1vw solid #fff;
+  border-top: 1vw solid #fff;
+  border-right: 1vw solid #fff;
+  border-bottom: 1vw solid #fff;
+  border-left: 1vw solid #fff;
+  border-radius: 1vw;
+  border-radius: 50%;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  border-width: 1vw;
+  border-top-width: 1vw;
+  border-right-width: 1vw;
+  border-bottom-width: 1vw;
+  border-left-width: 1vw;
+}

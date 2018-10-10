@@ -1,0 +1,15 @@
+.test {
+  position: absolute;
+  top: 0;
+  top: 10%;
+  top: 1vw;
+  right: 0;
+  right: 10%;
+  right: 1vw;
+  bottom: 0;
+  bottom: 10%;
+  bottom: 1vw;
+  left: 0;
+  left: 10%;
+  left: 1vw;
+}

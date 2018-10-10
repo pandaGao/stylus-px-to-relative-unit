@@ -1,0 +1,28 @@
+{
+  "name": "stylus-px-to-relative-unit",
+  "version": "1.0.0",
+  "description": "A stylus plugin to convert px to relative length units (vw / rem)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "stylus",
+    "px2rem",
+    "px2vw",
+    "rem",
+    "viewport"
+  ],
+  "author": "RyanGao <me@pandagao.com>",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/pandaGao/stylus-px-to-relative-unit"
+  }
+}

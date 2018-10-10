@@ -1,0 +1,18 @@
+.test {
+  border: 0.1rem solid #fff;
+  border-top: 0.1rem solid #fff;
+  border-right: 0.1rem solid #fff;
+  border-bottom: 0.1rem solid #fff;
+  border-left: 0.1rem solid #fff;
+  border-radius: 0.1rem;
+  border-radius: 50%;
+  border-top-left-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  border-width: 0.1rem;
+  border-top-width: 0.1rem;
+  border-right-width: 0.1rem;
+  border-bottom-width: 0.1rem;
+  border-left-width: 0.1rem;
+}

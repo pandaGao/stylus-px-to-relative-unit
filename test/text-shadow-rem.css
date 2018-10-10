@@ -1,0 +1,5 @@
+.test {
+  text-shadow: 0.1rem 0.1rem 0.1rem #fff;
+  text-shadow: 0.1rem 0.1rem 0.1rem #fff, 0 0 1em #f00, 0 0 0.2em #ff0;
+  text-shadow: 1px 1px 1px #fff, 0 0 1em #f00, 0 0 0.2em #ff0;
+}

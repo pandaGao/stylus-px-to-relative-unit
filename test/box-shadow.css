@@ -1,0 +1,5 @@
+.test {
+  box-shadow: 1vw -1vw 1vw #fff;
+  box-shadow: inset 5em 1em #fff;
+  box-shadow: 1vw 3.75px #fff, inset 5em 1em #000;
+}

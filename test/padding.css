@@ -1,0 +1,10 @@
+.test {
+  padding: 10% 0;
+  padding: 1vw;
+  padding: 1.5vw 1.5vw;
+  padding: 1.5vw 1.5vw 1.5vw 1.5vw;
+  padding-top: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 1vw;
+}
