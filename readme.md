@@ -1,5 +1,7 @@
 # stylus-px-to-relative-unit
 
+[![npm version](https://badge.fury.io/js/stylus-px-to-relative-unit.svg)](https://badge.fury.io/js/stylus-px-to-relative-unit)
+
 A stylus plugin to convert px to relative length units (vw / rem)
 
 ## Install
@@ -104,6 +106,12 @@ For arguments don't want to be converted, wrap them with quote.
   padding: 3.75px 1vw;
 }
 ```
+
+## Changelog
+
+### v1.1.0 - 2018/10/13
+* Support option targetUnit 'vw&rem'
+
 
 ## Acknowledgments
 
