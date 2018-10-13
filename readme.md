@@ -39,12 +39,31 @@ pxToUnit({
 
 | Options         | Default       | Description  |
 | --------------- |:-------------:|:-----|
-| targetUnit      | 'vw' | target relative length unit. Currently support 'vw' and 'rem' |
+| targetUnit      | 'vw' | target relative length unit. Support 'vw', 'rem' and 'vw&rem' |
 | ignoreThreshold | 1    | px values less than this threshold won't be converted |
 | viewportWidth   | 375  | base viewport width (for targetUnit: 'vw' ) |
 | viewportHeight  | 667  | base viewport height (for targetUnit: 'vw', currently useless) |
 | htmlFontSize    | 37.5 | base html font-size (for targetUnit: 'rem') |
 
+### targetUnit: 'vw&rem'
+
+If you want to use unit vw and also worry about browser support, you can use 'vw&rem' mode. For example:
+
+```Stylus
+// Input 
+.test
+  border 3.75px solid #fff
+
+// Output
+.test {
+  border: 0.1rem solid #fff;
+  border: 1vw solid #fff;
+}
+```
+
+For browser doesn't support vw, it will automatically use rem to layout.
+
+**Notice: If you need to limit max/min width of the layout, this mode is not suit for you**
 
 ## GLobal stylus function
 This plugin will not convert px arguments in css functions like 'translate()', but provides some global stylus functions for users to convert px value manually.

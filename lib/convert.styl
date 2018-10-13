@@ -1,9 +1,10 @@
 px2vw(val)
   unit(val / viewport-width * 100, vw)
+
 px2rem(val)
   unit(val / html-font-size, rem)
 
-px-to-unit(val)
+px-to-unit(target-unit, val)
   result = val
   if typeof(val) == 'unit' and match('px$', '' + val) and val != 0
     if abs(val) > ignore-threshold
@@ -15,17 +16,28 @@ px-to-unit(val)
     result = unquote(val)
   return result
 
-convert-px-to-unit(prop, args)
+convert-args(target-unit, args)
+  output-args = null
   if list-separator(args) == ','
     items = ()
     for item in args
       tmp = ()
       for arg in item
-        push(tmp, px-to-unit(arg))
+        push(tmp, px-to-unit(target-unit, arg))
       push(items, join(' ', tmp))
-    {prop} unquote(join(', ', items))
+    output-args = unquote(join(', ', items))
   else
     output-args = ()
     for arg in args
-      push(output-args, px-to-unit(arg))
+      push(output-args, px-to-unit(target-unit, arg))
+  return output-args
+
+convert-px-to-unit(prop, args)
+  if (target-unit == 'vw&rem')
+    vw-output = convert-args('vw', args)
+    rem-output = convert-args('rem', args)
+    {prop} rem-output
+    {prop} vw-output
+  else
+    output-args = convert-args(target-unit, args)
     {prop} output-args

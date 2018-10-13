@@ -6,7 +6,7 @@ const pxToViewport = require('..')
 
 describe('Test px to responsive unit', function () {
   describe('# px to vw', function () {
-    fs.readdirSync(__dirname).filter(d => d.includes('.styl')).forEach(f => {
+    fs.readdirSync(__dirname).filter(d => d.includes('.styl') && !d.includes('fallback')).forEach(f => {
       let filename = f.replace('.styl', '')
       it(filename, function (done) {
         let file = fs.readFileSync(path.join(__dirname, f), 'utf8')
@@ -24,7 +24,7 @@ describe('Test px to responsive unit', function () {
 
 
   describe('# px to rem', function () {
-    fs.readdirSync(__dirname).filter(d => d.includes('.styl')).forEach(f => {
+    fs.readdirSync(__dirname).filter(d => d.includes('.styl') && !d.includes('fallback')).forEach(f => {
       let filename = f.replace('.styl', '')
       it(filename, function (done) {
         let file = fs.readFileSync(path.join(__dirname, f), 'utf8')
@@ -32,6 +32,25 @@ describe('Test px to responsive unit', function () {
         stylus(file)
           .use(pxToViewport({
             targetUnit: 'rem'
+          }))
+          .render(function (err, css) {
+            if (err) done(err)
+            assert.equal(css, expectCss)
+            done()
+          })
+      })
+    })
+  })
+
+  describe('# px to vw&rem', function () {
+    fs.readdirSync(__dirname).filter(d => d.includes('.styl') && d.includes('fallback')).forEach(f => {
+      let filename = f.replace('.styl', '')
+      it(filename, function(done) {
+        let file = fs.readFileSync(path.join(__dirname, f), 'utf8')
+        let expectCss = fs.readFileSync(path.join(__dirname, `${filename}.css`), 'utf8')
+        stylus(file)
+          .use(pxToViewport({
+            targetUnit: 'vw&rem'
           }))
           .render(function (err, css) {
             if (err) done(err)

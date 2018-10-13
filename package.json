@@ -22,7 +22,7 @@
     "mocha": "^5.2.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/pandaGao/stylus-px-to-relative-unit"
+    "type": "git",
+    "url": "https://github.com/pandaGao/stylus-px-to-relative-unit"
   }
 }
