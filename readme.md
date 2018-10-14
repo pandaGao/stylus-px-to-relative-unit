@@ -1,6 +1,7 @@
 # stylus-px-to-relative-unit
 
 [![npm version](https://badge.fury.io/js/stylus-px-to-relative-unit.svg)](https://badge.fury.io/js/stylus-px-to-relative-unit)
+[![Build Status](https://travis-ci.org/pandaGao/stylus-px-to-relative-unit.svg?branch=master)](https://travis-ci.org/pandaGao/stylus-px-to-relative-unit)
 
 A stylus plugin to convert px to relative length units (vw / rem)
 
