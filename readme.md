@@ -110,6 +110,9 @@ For arguments don't want to be converted, wrap them with quote.
 
 ## Changelog
 
+### v1.1.1 - 2018/10/28
+* Optimize output in 'vw&rem' mode
+
 ### v1.1.0 - 2018/10/13
 * Support option targetUnit 'vw&rem'
 

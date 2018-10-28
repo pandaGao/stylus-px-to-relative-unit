@@ -16,6 +16,25 @@ px-to-unit(target-unit, val)
     result = unquote(val)
   return result
 
+px-need-convert(val)
+  result = false
+  if typeof(val) == 'unit' and match('px$', '' + val) and val != 0 and abs(val) > ignore-threshold
+    result = true
+  return result
+
+need-convert(args)
+  result = false
+  if list-separator(args) == ','
+    for item in args
+      for arg in item
+        if px-need-convert(arg)
+          result = true
+  else
+    for arg in args
+      if px-need-convert(arg)
+        result = true
+  return result
+
 convert-args(target-unit, args)
   output-args = null
   if list-separator(args) == ','
@@ -35,9 +54,12 @@ convert-args(target-unit, args)
 convert-px-to-unit(prop, args)
   if (target-unit == 'vw&rem')
     vw-output = convert-args('vw', args)
-    rem-output = convert-args('rem', args)
-    {prop} rem-output
-    {prop} vw-output
+    if need-convert(args)
+      rem-output = convert-args('rem', args)
+      {prop} rem-output
+      {prop} vw-output
+    else
+      {prop} vw-output
   else
     output-args = convert-args(target-unit, args)
     {prop} output-args
