@@ -7,7 +7,8 @@ function pxToUnit (customOptions = {}) {
     ignoreThreshold: 1,
     viewportWidth: 375,
     viewportHeight: 667,
-    htmlFontSize: 37.5
+    htmlFontSize: 37.5,
+    needConvert: true
   }, customOptions)
   return function (style) {
     style.define('target-unit', options.targetUnit)
@@ -15,6 +16,7 @@ function pxToUnit (customOptions = {}) {
     style.define('viewport-width', options.viewportWidth)
     style.define('viewport-height', options.viewportHeight)
     style.define('html-font-size', options.htmlFontSize)
+    style.define('need-convert', options.needConvert)
     style.import(entryPath)
   }
 }

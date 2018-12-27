@@ -22,7 +22,7 @@ px-need-convert(val)
     result = true
   return result
 
-need-convert(args)
+unit-need-convert(args)
   result = false
   if list-separator(args) == ','
     for item in args
@@ -52,14 +52,17 @@ convert-args(target-unit, args)
   return output-args
 
 convert-px-to-unit(prop, args)
-  if (target-unit == 'vw&rem')
-    vw-output = convert-args('vw', args)
-    if need-convert(args)
-      rem-output = convert-args('rem', args)
-      {prop} rem-output
-      {prop} vw-output
+  if need-convert
+    if (target-unit == 'vw&rem')
+      vw-output = convert-args('vw', args)
+      if unit-need-convert(args)
+        rem-output = convert-args('rem', args)
+        {prop} rem-output
+        {prop} vw-output
+      else
+        {prop} vw-output
     else
-      {prop} vw-output
+      output-args = convert-args(target-unit, args)
+      {prop} output-args
   else
-    output-args = convert-args(target-unit, args)
-    {prop} output-args
+    {prop} args

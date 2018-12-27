@@ -47,6 +47,7 @@ pxToUnit({
 | viewportWidth   | 375  | base viewport width (for targetUnit: 'vw' ) |
 | viewportHeight  | 667  | base viewport height (for targetUnit: 'vw', currently useless) |
 | htmlFontSize    | 37.5 | base html font-size (for targetUnit: 'rem') |
+| needConvert     | true |  |
 
 ### targetUnit: 'vw&rem'
 
@@ -67,6 +68,21 @@ If you want to use unit vw and also worry about browser support, you can use 'vw
 For browser doesn't support vw, it will automatically use rem to layout.
 
 **Notice: If you need to limit max/min width of the layout, this mode is not suit for you**
+
+### needConvert
+For special files don't want to be converted, add 'need-convert = false' on top of each stylus files.
+```Stylus
+// Input
+need-convert = false
+.test
+  width 3.75px
+
+// Output
+.test {
+  width: 3.75px;
+}
+```
+
 
 ## GLobal stylus function
 This plugin will not convert px arguments in css functions like 'translate()', but provides some global stylus functions for users to convert px value manually.
@@ -109,6 +125,9 @@ For arguments don't want to be converted, wrap them with quote.
 ```
 
 ## Changelog
+
+### v1.2.0 - 2018/12/27
+* Add 'needConvert' option
 
 ### v1.1.1 - 2018/10/28
 * Optimize output in 'vw&rem' mode
