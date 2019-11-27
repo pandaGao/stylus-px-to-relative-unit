@@ -5,6 +5,11 @@
 
 A stylus plugin to convert px to relative length units (vw / rem)
 
+## Postcss version
+
+I maintain a Postcss Plugin for more common usage. Please visit
+[postcss-px-to-relative-unit](https://github.com/pandaGao/postcss-px-to-relative-unit)
+
 ## Install
 ```shell
 npm install stylus-px-to-relative-unit
